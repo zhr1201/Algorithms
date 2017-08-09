@@ -16,7 +16,10 @@ struct Work
 
 bool operator < (const Work A, const Work B)
 {
-	return (A.weight - A.length) < (B.weight - B.length);
+	if(((float)A.weight / A.length) == ((float)B.weight / B.length))
+		return A.weight > B.weight;
+	else
+		return ((float)A.weight / A.length) > ((float)B.weight / B.length);
 
 }
 
@@ -27,10 +30,10 @@ int main()
 	int tmp;
 	file >> tmp;
 	list<Work> worklist;
+	int weight;
+	int length;
 	while(!file.eof())
 	{
-		int weight;
-		int length;
 		file >> weight;
 		file >> length;
 		Work tmp_work(weight, length);
