@@ -24,7 +24,7 @@ void Graph::add_edge(int i, int j)
 void Graph::add_edge_from_txt(string filename)
 {
 	ifstream file(filename);
-    int i;
+	int i;
 	int j;
 	bool flag = false;
 	while(!file.eof())
